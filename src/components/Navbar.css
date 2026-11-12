@@ -1,0 +1,162 @@
+.navbar-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background-color: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid rgba(220, 220, 220, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: clamp(64px, 7vw, 80px); /* Dynamically shrinks height on smaller screens */
+  padding: 0 clamp(16px, 3vw, 32px); /* Fluid padding instead of fixed 32px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Brand Section */
+.brand-btn {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 12px);
+  cursor: pointer;
+  flex-shrink: 0; /* Prevents the logo/name from squeezing */
+}
+
+/* Fluid responsive logo symbol */
+.brand-icon {
+  width: clamp(20px, 3.5vw, 24px);
+  height: clamp(20px, 3.5vw, 24px);
+  color: var(--primary-accent);
+}
+
+/* Fluid typography for the brand name */
+.brand-title {
+  font-size: clamp(15px, 1.8vw, 19px);
+  font-weight: 700;
+  letter-spacing: clamp(0.12em, 0.2vw, 0.22em);
+  color: #242220;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Desktop & Tablet Navigation */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.2vw, 32px); /* Scales smoothly from 14px on tablets to 32px on wide monitors */
+}
+
+.nav-link {
+  position: relative;
+  padding: 8px 0;
+  font-size: clamp(11.5px, 1.1vw, 13px); /* Prevents text overflow on 768px-1024px screens */
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #6a6764;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+
+
+
+
+/* Auth Buttons */
+.auth-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.8vw, 24px);
+  flex-shrink: 0;
+}
+
+.btn-login {
+   padding: clamp(7px, 1vw, 10px) clamp(14px, 1.8vw, 24px);
+  background-color: var(--primary-accent);
+  color: #242222;
+  font-size: clamp(11.5px, 1.1vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.25s ease;
+}
+
+.btn-login:hover {
+  color: #78b2b5;
+}
+
+.btn-register {
+  padding: clamp(7px, 1vw, 10px) clamp(14px, 1.8vw, 24px);
+  background-color: var(--primary-accent);
+  color: #242222;
+  font-size: clamp(11.5px, 1.1vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.25s ease;
+}
+
+.btn-register:hover {
+   color: #78b2b5;
+}
+
+.mobile-toggle-btn {
+  display: none;
+  cursor: pointer;
+  color: #242220;
+}
+
+.mobile-drawer {
+  display: none;
+  background-color: #ffffff;
+  border-top: 1px solid #eaeaea;
+  padding: 16px 24px;
+}
+
+.mobile-nav-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111110;
+  border-bottom: 1px solid #f2f2f2;
+  cursor: pointer;
+}
+
+
+
+.mobile-drawer-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+/* Breakpoint for Tablets and Mobile devices */
+@media (max-width: 900px) {
+  .desktop-nav,
+  .auth-actions {
+    display: none;
+  }
+  .mobile-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobile-drawer {
+    display: block;
+  }
+}
